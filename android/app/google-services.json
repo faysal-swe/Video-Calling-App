@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "760783535315",
+    "project_id": "video-calling-56acb",
+    "storage_bucket": "video-calling-56acb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:760783535315:android:d6599b3e53adc6f12b2826",
+        "android_client_info": {
+          "package_name": "com.example.webrtc_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1SPl_7d4UUwe8UIeGSXTcWI_k54Rmo2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
