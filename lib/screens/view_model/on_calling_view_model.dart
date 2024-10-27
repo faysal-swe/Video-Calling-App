@@ -1,7 +1,5 @@
-import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:get/get.dart';
 import 'package:webrtc_flutter/resources/utils/utils.dart';
-import '../../data/services/signaling.dart';
 
 class OnCallingViewModel extends GetxController {
   var remoteStream = Utils.remoteRenderer.obs;
@@ -24,6 +22,7 @@ class OnCallingViewModel extends GetxController {
     }
   }
 
+  // Monitor remote stream for connection state
   void hangUp() async {
     // Close the WebRTC Peer Connection
     Utils.signaling.peerConnection?.close();
@@ -43,5 +42,6 @@ class OnCallingViewModel extends GetxController {
 
     // Update the state to reflect that the call has ended
     update();
+    Get.back();
   }
 }

@@ -17,6 +17,7 @@ class _OnCallingViewState extends State<OnCallingView> {
   @override
   void initState() {
     // TODO: implement initState
+    // controller.activeCallMonitor();
     super.initState();
   }
 
@@ -65,25 +66,33 @@ class _OnCallingViewState extends State<OnCallingView> {
               bottom: 10,
               left: 0,
               right: 0,
-              child: Obx((){
+              child: Obx(() {
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     ElevatedButton(
-                        onPressed: (){
-                          controller.isVideoEnable.value = !controller.isVideoEnable.value;
+                        onPressed: () {
+                          controller.isVideoEnable.value =
+                              !controller.isVideoEnable.value;
                           controller.toggleVideo();
                         },
-                        child: controller.isVideoEnable.value ? const Icon(Icons.video_call): const Icon(Icons.videocam_off)),
+                        child: controller.isVideoEnable.value
+                            ? const Icon(Icons.video_call)
+                            : const Icon(Icons.videocam_off)),
                     ElevatedButton(
-                        onPressed: (){
-                          controller.isAudioEnable.value = !controller.isAudioEnable.value;
+                        onPressed: () {
+                          controller.isAudioEnable.value =
+                              !controller.isAudioEnable.value;
                           controller.toggleAudio();
                         },
-                        child: controller.isAudioEnable.value ?const Icon(Icons.mic) : const Icon(Icons.mic_off)),
+                        child: controller.isAudioEnable.value
+                            ? const Icon(Icons.mic)
+                            : const Icon(Icons.mic_off)),
                     ElevatedButton(
-                        onPressed: (){
-                          controller.hangUp();
+                        onPressed: () {
+                          // controller.hangUp();
+                          Utils.signaling.hangUp(Utils.localRenderer);
+                          Get.back();
                         },
                         child: const Icon(Icons.call))
                   ],

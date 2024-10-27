@@ -4,7 +4,7 @@ import '../../resources/utils/utils.dart';
 import '../view/on_calling_view.dart';
 
 class HomeViewModel extends GetxController {
-  RxInt roomIdLength = 20.obs;
+  RxInt roomIdLength = 5.obs;
   RxBool isButtonActive = false.obs;
   final TextEditingController tdtController = TextEditingController();
 
@@ -21,7 +21,7 @@ class HomeViewModel extends GetxController {
         .then((_) async {
       update();
     });
-    Utils.roomId = await Utils.signaling.createRoom(Utils.remoteRenderer);
+    Utils.roomId = await Utils.signaling.createRoom(Utils.remoteRenderer, Utils.getRandomID().toString());
     Get.to(const OnCallingView());
   }
 
